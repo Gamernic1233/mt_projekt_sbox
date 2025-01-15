@@ -1,0 +1,27 @@
+FROM php:8.1-fpm
+
+# Install system dependencies and PostgreSQL dev libraries
+RUN apt-get update && apt-get install -y \
+    unzip \
+    git \
+    libzip-dev \
+    libpq-dev \ 
+    && docker-php-ext-install zip pdo pdo_pgsql  # Install PostgreSQL PDO extension
+
+# Install Composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
+# Set working directory
+WORKDIR /app
+
+# Copy composer.json and composer.lock (if exists)
+COPY composer.json composer.lock* ./
+
+# Install Composer dependencies
+RUN composer install
+
+# Copy the rest of the project files
+COPY . .
+
+# Run PHP server
+CMD ["php", "-S", "0.0.0.0:8000", "-t", "./app/public"]

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="login.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>S-BOX</h1>
+        </header>
+
+        <form>
+            <h2>LOGIN</h2>
+            <!-- Meno -->
+            <label for="login_input_username">Username:</label><br>
+            <input type="text" id="login_input_username" name="username"><br>
+
+            <!-- Heslo -->
+            <label for="login_input_password">Password:</label><br>
+            <input type="password" id="login_input_password" name="heslo">
+
+            <!-- Zobrazenie hesla -->
+            <input type="checkbox" id="login_password_visibility" name="zobraz">Zobrazit heslo<br>
+
+            <!-- Prihlasovaci button-->
+            <button id="login_button">Sign in</button>
+
+            <p class="error" id="error_msg"></p>
+            <p class="success" id="success_msg"></p>
+        </form>
+
+    </body>
+    <script src="login.js"></script>
+</html>

@@ -1,0 +1,43 @@
+version: '3.9'
+services:
+  php:
+    environment:
+      DB_HOST: db
+      DB_USER: admin
+      DB_PASSWORD: admin
+      DB_NAME: my_database    
+    build:
+      context: ./php
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./php:/app
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: my_database
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d my_database "]
+      interval: 5s
+      retries: 5
+    networks:
+      - app-network
+
+volumes:
+  db_data:
+
+networks:
+  app-network:
+    driver: bridge

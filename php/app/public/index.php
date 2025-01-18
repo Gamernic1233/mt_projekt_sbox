@@ -40,7 +40,7 @@ if ($requestUri === '/login' && $requestMethod === 'POST') {
     (new DeviceController())->addDevice();
 } elseif ($requestUri === '/getDevices' && $requestMethod === 'GET') {
     (new DeviceController())->getDevices();
-}elseif ($requestUri === '/getUserDevices' && $requestMethod === 'GET') {
+}elseif (strpos($requestUri, '/getUserDevices') === 0 && $requestMethod === 'GET') {
     (new DeviceController())->getUserDevices(); 
 } elseif ($requestUri === '/getUsers' && $requestMethod === 'POST') {
     (new DataController())->getUsers();

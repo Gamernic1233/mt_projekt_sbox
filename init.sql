@@ -25,5 +25,8 @@ CREATE TABLE zariadenia (
 INSERT INTO users (username, password, email) VALUES ('admin', 'admin', 'admin@admin.com');
 INSERT INTO users (username, password, email) VALUES ('admin2', 'admin2', 'admin2@admin.com');
 INSERT INTO zariadenia (author_id, nazov_zariadenia) VALUES (1, 'Zariadenie 1');
+INSERT INTO zariadenia (author_id, nazov_zariadenia) VALUES (1, 'Zariadenie 2');
 INSERT INTO zariadenia (author_id, nazov_zariadenia) VALUES (2, 'XYZ');
 INSERT INTO merane_data (nazov_zariadenia, vlhkost_pody, tlak_vzduchu, teplota_vzduchu, vlhkost_vzduchu) VALUES ('Zariadenie 1', 50, 1000, 20, 50);
+INSERT INTO merane_data (nazov_zariadenia, vlhkost_pody, tlak_vzduchu, teplota_vzduchu, vlhkost_vzduchu) VALUES ('Zariadenie 2', 50, 1000, 20, 50);
+INSERT INTO merane_data (nazov_zariadenia, vlhkost_pody, tlak_vzduchu, teplota_vzduchu, vlhkost_vzduchu) VALUES ('XYZ', 50, 1000, 20, 50);

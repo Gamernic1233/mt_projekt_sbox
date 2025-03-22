@@ -6,6 +6,7 @@ services:
       - ../reverse-proxy/domains:/etc/nginx/conf.d/
       - ../reverse-proxy/nginx.conf:/etc/nginx/nginx.conf:ro
       - ../reverse-proxy/log:/var/log/nginx/
+      - ../frontend/src:/app/src
     ports:
       - 80:80
       - 443:443

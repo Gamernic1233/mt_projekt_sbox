@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>REGISTRACIA</title>
+        <link rel="stylesheet" type="text/css" href="../css/registracia.css">
+    </head>
+
+    <body>
+        <div class="formular">
+            <div class="container">
+                <div class="nadpis">Vytvor si ucet v S-BOX</div>
+
+                <div class="input-group">
+                    <div class="input-field">
+                        <img src="../img/UserMailIcon.png" alt="Ikona">
+                        <input type="text" placeholder="Zadaj email" id="registracia_input_email">
+                    </div>
+
+                    <div class="input-field">
+                        <img src="../img/UserIcon.png" alt="Ikona">
+                        <input type="text" placeholder="Zadaj username" id="registracia_input_username">
+                    </div>
+
+                    <div class="input-field">
+                        <img src="../img/UserLockIcon.png" alt="Ikona">
+                        <input type="text" placeholder="Zadaj heslo" id="registracia_input_password">
+                    </div>
+
+                    <div class="input-field">
+                        <img src="../img/UserLockIcon.png" alt="Ikona">
+                        <input type="text" placeholder="Potvrd heslo" id="registracia_password_input_confirm">
+                    </div>
+                </div>
+
+                <div class="box-group">
+                    <input type="checkbox" id="show-password"> Zobraziť heslo
+                </div>
+
+                <div class="debug-msg-group">
+                    <p class="error" id="error_msg">ddfsfd</p>
+                    <p class="success" id="success_msg"></p>
+                </div>
+
+                <button class="registration_button" id="registration-button">
+                    VYTVORIT UCET
+                </button>
+            </div>
+
+            <a href="../html/login.html">Mas uz vytvoreny ucet ? Prihlasit sa</a>
+        </div>
+        <script src="../js/registracia.js"></script>
+    </body>
+</html>

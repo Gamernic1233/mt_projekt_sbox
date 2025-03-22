@@ -1,0 +1,304 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack top and bottom vertically */
+    background-color: rgb(80, 181, 181);
+}
+
+.top-side {
+    width: 100%;
+    height: 15%;
+    background-color: aqua;
+}
+
+.bottom {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    background-color: aquamarine;
+}
+
+.bottom-side {
+    height: 85%;
+    width: 100%;
+    display: flex;
+    background-color: beige;
+}
+
+.left-side {
+    height: 100%;
+    width: 15%;
+    background-color: #01CD74;
+}
+
+.right-side {
+    height: 100%;
+    width: 85%;
+    background-color: #FAFBF6;
+    box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+}
+
+.graph-container {
+    background-color: #e1e1e1;
+    padding: 20px;/* odsadenie */
+    width: 90%;              
+    height: 80%;             
+}
+
+
+
+
+
+
+
+/* ======================================= VRCHNA STRANA TOP BARU ======================================= */
+
+.top {
+    width: 100%;
+    height: 50%;
+    background-color: #3f3f3f;
+
+    display: flex;
+    justify-content: space-between; /* Distributes items evenly, with first at left, last at right */
+    align-items: center; /* Centers items vertically within the container */
+}
+
+
+/* PRIHLASENY POUZIVATEL */
+.logged-in-user {
+    height: 100%;
+    width: 30%;
+    display: flex;
+}
+
+.logged-in-user img {
+    height: 100%; /* Ikonka bude mať rovnakú výšku ako input-group */
+    aspect-ratio: 1/1; /* Udrží štvorec (rovnaká šírka a výška) */
+    object-fit: contain; /* Zabezpečí, že obrázok nebude deformovaný */
+}
+
+.logged-username {
+    font-size: 30px;
+    color: #04AA6D;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+
+    display: flex;
+    align-items: center;  /* Centers text vertically */
+    justify-content: center; /* Ensures it's horizontally centered as well (if needed) */
+}
+
+/* NAZOV ZARIADENIA */
+.device-name {
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+
+    display: flex;
+    align-items: center;  /* Centers text vertically */
+    justify-content: center; /* Ensures it's horizontally centered as well (if needed) */
+}
+
+.device-label {
+    color: #04AA6D;  /* Different color for "ZARIADENIE:" */
+}
+
+/* ODHLASOVACI BUTTON */
+.logout-button {
+    height: 100%;
+    width: 10%;
+
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f54b4b;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #FFFFFF;
+    color: #f54b4b;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ====================================================================================================== */
+
+
+
+
+
+
+/* ======================================= SPODNA STRANA TOP BARU ======================================= */
+
+/* VYHLADAVACIE MENU */
+.search-container {
+    height: 100%;
+    width: 15%;
+    display: flex;
+    background-color: rgb(223, 222, 222);
+}
+
+.search-input, .search-button {
+    height: 100%;
+    padding: 0; 
+    border: none; 
+    box-sizing: border-box;
+}
+
+.search-button {
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: #f54b4b;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(223, 222, 222);
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #f54b4b;
+    color: rgb(223, 222, 222);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.search-input {
+    text-align: center;
+    width: 60%;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* BUTTONS NAMERANYCH HODNOT */
+.buttons-container {
+    width: 85%;
+    height: 100%;
+    background-color: #01CD74;
+
+    display: flex;  
+    justify-content: flex-start; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+    gap: 10px; /* Adds space between items */
+}
+
+.buttons-container button {
+    margin-left: 10px;
+}
+
+.graph-button {
+    height: 60%;
+    width: 10%;
+
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #04AA6D;
+    border: none;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.graph-button:hover {
+    background-color: #FFFFFF;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    color: #01CD74;
+}
+
+/* ====================================================================================================== */
+
+
+
+/* ======================================= SPODNA LAVA STRANA ======================================= */
+
+.devices-container {
+    width: 100%; /* Full width */
+    height: 100%; /* Maximálna výška kontajnera */
+    margin-top: 5px; /* Margin from the top */
+    flex-grow: 1; /* This makes the container take the remaining space */
+    border: 2px solid #000; /* Optional border for visualization */
+    box-sizing: border-box;
+    padding: 10px; /* Optional padding */
+    overflow-y: auto; /* Allow vertical scrolling if the content overflows */
+
+    display: flex;            /* Use Flexbox for layout */
+    flex-direction: column;   /* Stack buttons vertically */
+    align-items: flex-start;  /* Align buttons to the top of the container */
+    gap: 5px;  /* Space between buttons */
+}
+
+.device-button {
+    width: 100%; /* Nastavenie šírky tlačidla na 100% šírky kontajnera */
+    height: 40px;  /* Pevná výška tlačidla */
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #04AA6D;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+
+    padding: 10px; /* Odsadenie vnútri tlačidla */
+    display: flex;
+    align-items: center;  /* Vertikálne centrovanie textu */
+    justify-content: center;  /* Horizontálne centrovanie textu */
+    box-sizing: border-box;  /* Uistíme sa, že padding je zahrnutý do šírky a výšky */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0; /* Zabraňuje zmenšeniu výšky tlačidla */
+}
+
+.device-button:hover {
+    background-color: #FFFFFF;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    color: #01CD74;
+}
+
+
+
+/* SCROLLING BAR */
+.devices-container::-webkit-scrollbar {
+    width: 8px; /* Width of the vertical scrollbar */
+    height: 8px; /* Height of the horizontal scrollbar */
+}
+
+/* Style the scrollbar handle (the part that the user drags) */
+.devices-container::-webkit-scrollbar-thumb {
+    background-color: #45aba8; /* Color of the scrollbar thumb */
+}
+
+/* Style the scrollbar track (area the thumb slides within) */
+.devices-container::-webkit-scrollbar-track {
+    background: #04AA6D; /* Track color */
+}
+
+/* Style the scrollbar on hover */
+.devices-container::-webkit-scrollbar-thumb:hover {
+    background-color: #606060; /* Darker color on hover */
+}
+
+.devices-container::-webkit-scrollbar-thumb {
+    background-color: #3f3f3f;
+}

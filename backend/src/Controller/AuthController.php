@@ -32,7 +32,11 @@ class AuthController {
             $response = $this->authService->login($username, $password);
 
             if ($response['status'] === 'success') {
-                echo json_encode(['message' => 'Login successful']);
+                echo json_encode([
+                    'message' => 'Login successful',
+                    'token' => $response['token'],
+                    'user' => $response['user'],
+                ]);
             } else {
                 http_response_code(StatusCode::UNAUTHORIZED);
                 echo json_encode(['message' => 'Invalid credentials']);
@@ -50,16 +54,26 @@ class AuthController {
         $password = $data['password'] ?? '';
         $repeat_password = $data['repeat_password'] ?? '';
         $email = $data['email'] ?? '';
-
+    
         // Validate user input
-        if (!$this->userValidator->validateRegistration($username, $password, $repeat_password, $email)) {
+        if (!$this->userValidator->validateRegistration($email, $username, $password, $repeat_password)) {
             http_response_code(StatusCode::BAD_REQUEST);
             echo json_encode(['message' => 'Invalid input']);
             return;
         }
-
+    
         $response = $this->authService->register($username, $password, $email);
-        echo json_encode($response);
+    
+        // Ak registrácia prebehla úspešne, pošleme aj token
+        if ($response['status'] === 'success') {
+            echo json_encode([
+                'message' => $response['message'],
+                'token' => $response['token'],  // Posielame token spolu s odpoveďou
+            ]);
+        } else {
+            echo json_encode($response);
+        }
     }
+    
 }
 

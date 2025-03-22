@@ -25,10 +25,14 @@ document.getElementById("login_button").addEventListener("click", async function
             if(data["message"] === "Login successful"){
                 error_msg.innerHTML = "";
                 success_msg.innerHTML = data["message"];
-                localStorage.setItem("username", username);
-                window.location.href = "./prihlaseny.html";
+                localStorage.setItem("username", data['user']);
+                localStorage.setItem("token", data['token']);
+                document.cookie = `token=${data['token']}; path=/; samesite=strict`; //  secure;
+                //window.open('/prihlaseny', '_blank');
+                window.location.href = "/";
 
             } else {
+                console.log("error msg: " + data["message"])
                 error_msg.innerHTML = data["message"];
                 success_msg.innerHTML = "";
             }

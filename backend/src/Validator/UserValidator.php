@@ -27,7 +27,7 @@ class UserValidator {
      * @param string $email
      * @return bool
      */
-    public function validateRegistration($username, $password, $repeatPassword, $email) {
+    public function validateRegistration($email, $username, $password, $repeatPassword) {
         // Basic example validation:
         if(empty($username) || empty($password) || empty($repeatPassword) || empty($email)) {
             return false;

@@ -1,0 +1,143 @@
+/*telo stranky*/
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;  /* Horizontálne zarovnanie */
+    align-items: center;  /* Vertikálne zarovnanie */
+    height: 100vh;  /* Výška na celú obrazovku */
+    background: linear-gradient(-180deg, #70c9e7, #3eb35d); /* Gradient pozadie */
+    margin: 0;
+    padding: 0;
+}
+
+/* Formular */
+.formular {
+    width: 400px; /* Fixná šírka */
+    height: 400px; /* Fixná výška */
+    padding: 10px 25px;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+
+    display: flex; 
+    flex-direction: column; /* Zoradí deti vertikálne */
+    justify-content: center; /* Centrovanie vertikálne */
+    align-items: center; /* Centrovanie horizontálne */
+}
+
+/* Container vo vnútri formulara */
+.container {
+    width: 85%;
+    height: 75%;
+    padding: 10px 20px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Medzera medzi inputmi */
+}
+
+
+.nadpis {
+    text-align: left;
+    font-family:'Roboto', sans-serif;
+    color: #01CD74;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    width: 100%;
+    height: 45%;
+    flex: 1; /* Dynamická výška */
+    gap: 10px;
+}
+
+.input-field {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+    background-color: #ffffff;
+    border: 2px solid rgb(162, 162, 162);
+}
+
+.input-field img {
+    height: 100%; /* Ikonka bude mať rovnakú výšku ako input-group */
+    aspect-ratio: 1/1; /* Udrží štvorec (rovnaká šírka a výška) */
+    object-fit: contain; /* Zabezpečí, že obrázok nebude deformovaný */
+}
+
+.input-field input {
+    flex: 1; /* Input zaberie zvyšok dostupnej šírky */
+    border: none; /* Zruší rámček okolo inputu */
+    background: none;
+    outline: none;
+    font-size: 16px;
+    padding-left: 10px;
+    font-family:'Roboto', sans-serif;
+    font-weight: 500;
+    color: #868686;
+}
+
+
+input::placeholder {
+    color: #888; /* Nastaví farbu placeholdera na svetlo šedú */
+    opacity: 1; /* Nastaví plnú viditeľnosť (štandardne býva trochu priehľadný) */
+}
+
+a {
+    margin-top: 20px; /* Odsadenie odhora o 10px */
+    text-decoration: none; /* Odstráni podčiarknutie odkazu */
+    color: #3b70cb; /* Farba odkazu */
+}
+
+a:hover {
+    color: #6e97f6; /* Zmena farby odkazu pri hover */
+}
+
+/*nadpis h2 (REGISTRACIA)*/  
+h2 {
+    text-decoration: underline;
+    color: #008087;
+    text-align: center;
+    font-size: x-large;
+}
+
+/*button*/  
+button {
+    font-family: sans-serif;
+    margin: 5px 0 10px 0;
+    border: 2.5px solid rgb(201, 219, 219);
+    box-sizing: border-box;
+    width: 100%;
+    padding: 14px;
+    background-color: #01CD74;
+    font-size: medium;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: #0e9b5e;
+}
+
+.debug-msg-group {
+    width: 100%;
+    height: 10%;
+}
+.error {
+    width: 100%;
+    height: 20%;
+}
+
+.success {
+    width: 100%;
+    height: 20%;
+}

@@ -1,22 +1,22 @@
-const server_addres = "http://127.0.0.1:8000";
-
 var selected_device = "";
 
-usrnm_field = document.getElementById("usenameTop");
+usrnm_field = document.getElementById("logged_in_user");
 usrnm_field.innerHTML =  localStorage.getItem("username");
 
 console.log(localStorage.getItem("username"));
 
 //logout button
 
-document.getElementById("logout_btn").addEventListener("click", async function(event){
+document.getElementById("logout_button").addEventListener("click", async function(event){
     event.preventDefault();
-    window.location.href = "./login.html"
+    localStorage.clear();
+    document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+    window.location.href = "./login"
 });
 
 //generate device buttons
 function generate_device_buttons() {
-    var devicesContainer = document.querySelector(".devicesContainer");
+    var devicesContainer = document.querySelector(".devices-container");
     var device_names = [];
     var username = localStorage.getItem("username");
 
@@ -24,6 +24,7 @@ function generate_device_buttons() {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
+            "Authorization": `Bearer ${localStorage.getItem('token')}`,
         }
     })
     .then(response => response.json()) 
@@ -37,10 +38,10 @@ function generate_device_buttons() {
         device_names.forEach(element => {
             var device_button = document.createElement("button");
             device_button.innerHTML = element; 
-            device_button.className = "buttonZariadenie";
+            device_button.className = "device-button";
             device_button.onclick = function() {
                 localStorage.setItem("device_name", element);
-                document.querySelector(".deviceNameTopBar").innerHTML = element;
+                document.querySelector(".device-name").innerHTML = '<span class="device-label">ZARIADENIE:</span>&nbsp;' + element;
                 selected_device = element;
             }
             devicesContainer.appendChild(device_button);
@@ -58,8 +59,7 @@ generate_device_buttons();
 //search
 document.getElementById("searchButton").addEventListener("click", async function(event){
     event.preventDefault();
-    var searchInput = document.querySelector(".searchInput").value;
-    var devicesContainer = document.querySelector(".devicesContainer");
+    var searchInput = document.querySelector(".search-input").value;
     var device_buttons = document.querySelectorAll(".buttonZariadenie");
 
     device_buttons.forEach(element => {
@@ -73,7 +73,7 @@ document.getElementById("searchButton").addEventListener("click", async function
 
 document.getElementById("search_input_area").addEventListener("keydown", async function(event){
     real_input = document.getElementById("search_input_area").value;
-    device_buttons = document.querySelectorAll(".buttonZariadenie");
+    device_buttons = document.querySelectorAll(".device-button");
 
     device_buttons.forEach(element => {
         if (element.innerHTML.includes(real_input)){
@@ -88,7 +88,7 @@ document.getElementById("search_input_area").addEventListener("keyup", async fun
     real_input = document.getElementById("search_input_area").value;
 
     if (real_input === ""){
-        var device_buttons = document.querySelectorAll(".buttonZariadenie");
+        var device_buttons = document.querySelectorAll(".device-button");
         device_buttons.forEach(element => {
             element.style.display = "block";
         });

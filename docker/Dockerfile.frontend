@@ -20,6 +20,9 @@ COPY composer.json composer.lock* ./
 # Install Composer dependencies
 RUN composer install
 
+# Copy frontend src files to the container
+COPY src /app/src
+
 # Copy the rest of the project files
 #COPY . .
 

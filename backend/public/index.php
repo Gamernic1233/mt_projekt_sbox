@@ -28,9 +28,9 @@ $router = new Router();
 $router->addRoute('POST', '/login', [new AuthController(), 'login']); //login
 $router->addRoute('POST', '/register', [new AuthController(), 'register']); //registracia
 $router->addRoute('GET', '/getuserdevices', [new DeviceController(), 'getUserDevices']); //ziska zariadenia pre konkretneho usera
-$router->addRoute('GET', '/getuserdevice', [new DeviceController(), 'getUserDevice']); //ziska data z konkretneho zariadenia
+$router->addRoute('GET', '/getUserDevice', [new DeviceController(), 'getUserDevice']); //ziska data z konkretneho zariadenia
 $router->addRoute('GET', '/getdata', [new DataController(), 'getData']); //ziska data
-$router->addRoute('POST', '/pushrecord', [new DataController(), 'pushRecord']); //prida polozku
+$router->addRoute('POST', '/pushrecord', [new DataController(), 'pushRecord']); //prida polozku , 
 $router->addRoute('GET', '/devices', [new DeviceController(), 'getDevices']); // ziska vsetky zariadenia
 $router->addRoute('POST', '/adddevice', [new DeviceController(), 'addDevice']); // prida zariadenie na konkretneho usera (auth id)
 
